@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS table_m3;
+
+CREATE TABLE table_m3 (
+    "Invoice ID" VARCHAR(20) PRIMARY KEY,
+    "Branch" CHAR(1),
+    "City" VARCHAR(20),
+    "Customer type" VARCHAR(20),
+    "Gender" VARCHAR(10),
+    "Product line" VARCHAR(100),
+    "Unit price" NUMERIC(10,2),
+    "Quantity" INTEGER,
+    "Tax 5%" NUMERIC(10,2),
+    "Total" NUMERIC(10,2),
+    "Date" DATE,
+    "Time" TIME,
+    "Payment" VARCHAR(20),
+    "cogs" NUMERIC(10,2),
+    "gross margin percentage" NUMERIC(5,2),
+    "gross income" NUMERIC(10,2),
+    "Rating" NUMERIC(3,1)
+);
+COPY table_m3
+FROM 'C:/Users/damar/OneDrive/Desktop/Hacktiv8/Phase-2/MS/p2-ftds-m3-damarnieh/P2M3_muhammad_damar_data_raw.csv'
+
+DELIMITER ','
+CSV HEADER;
+
+SELECT COUNT(*) FROM table_m3;
